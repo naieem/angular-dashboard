@@ -1,0 +1,24 @@
+<h3 class="margin">
+    Edit Article
+</h3>
+<form>
+    <div class="form-group">
+        <label for="email">
+            Article Title:
+        </label>
+        <input class="form-control" ng-model="single.users.title" type="text">
+        </input>
+    </div>
+    <div class="form-group">
+        <label for="pwd">
+            Article:
+        </label>
+        <textarea class="form-control" ng-model="single.users.description" ui-tinymce="tinymceOptions">
+        </textarea>
+    </div>
+    <button class="btn btn-default" ng-click="EditArticle()" type="submit">
+        Edit
+    </button>
+    <div class="msg" ng-bind-html="single.msg">
+    </div>
+</form>

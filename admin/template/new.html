@@ -1,0 +1,24 @@
+<h3 class="margin">
+    Add New Article
+</h3>
+<form>
+    <div class="form-group">
+        <label for="email">
+            Article Title:
+        </label>
+        <input class="form-control" ng-model="title" type="text">
+        </input>
+    </div>
+    <div class="form-group">
+        <label for="pwd">
+            Article:
+        </label>
+        <textarea class="form-control" ng-model="description" ui-tinymce="tinymceOptions">
+        </textarea>
+    </div>
+    <button class="btn btn-default" ng-click="AddArticle()" type="submit">
+        Submit
+    </button>
+    <div class="msg" ng-bind-html="msg">
+    </div>
+</form>

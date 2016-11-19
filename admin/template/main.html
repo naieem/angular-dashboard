@@ -1,0 +1,28 @@
+<h3>
+    List of all Article
+</h3>
+<div style="margin-bottom: 10px;">
+    <h4>
+        Filter Article
+    </h4>
+    <input ng-model="all.q" type="text" value="">
+    </input>
+</div>
+<span ng-bind-html="all.msg">
+</span>
+<div ng-bind-html="all.loader"></div>
+<ul class="list-group" ui-sortable="sortableOptions" ng-model="all.users">
+    <li class="list-group-item" current-page="all.currentPage" dir-paginate="user in all.users | filter:{'title' :all.q} | itemsPerPage: all.numPerPage">
+        <a href="#/article/{{user.id}}">
+            {{user.title}}
+        </a>
+        <a class="btn btn-info" href="#/article/{{user.id}}">
+            Edit
+        </a>
+        <a class="btn btn-info" href="#" ng-click="all.deleteArticle(user.id);$event.preventDefault();">
+            Delete
+        </a>
+    </li>
+</ul>
+<dir-pagination-controls boundary-links="true" template-url="template/dirPagination.tpl.html">
+</dir-pagination-controls>
